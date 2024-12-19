@@ -1,0 +1,9 @@
+resources:
+- apiservice
+- webfrontend
+- dashboard.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+
