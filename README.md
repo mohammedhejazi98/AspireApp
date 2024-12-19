@@ -1,3 +1,7 @@
+<div style="display: flex; align-items: center; gap: 10px;">
+    <img src="https://miro.medium.com/v2/resize:fit:828/format:webp/1*SLDi401dCoZ4mKakQYwxqA.png" alt="AspireApp Architecture" width="400"/>
+    <img src="https://i0.wp.com/codeblog.dotsandbrackets.com/wp-content/uploads/2017/07/kubernetes.jpg?resize=821%2C714&ssl=1" alt="Kubernetes" width="240"/>
+</div>
 # AspireApp.AppHost
 
 **AspireApp.AppHost** is an entry-point project for the Aspire application, designed to host and facilitate the seamless integration of the API service and web components. Built on modern .NET 8.0 technologies, it provides robust functionality for hosting services in a scalable and efficient way.
@@ -73,6 +77,7 @@ To deploy **AspireApp.AppHost** in a **Kubernetes** environment using **Aspirate
    - Access the web frontend at `http://localhost:8080` or `https://localhost:8443`.
 
 ---
+
 
 
 
