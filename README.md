@@ -61,7 +61,9 @@ To deploy **AspireApp.AppHost** in a **Kubernetes** environment using **Aspirate
    ```bash
    aspirate apply
    ```
-
+   ```bash
+   Password : 123456
+   ```
 2. **Port Forwarding to Access Aspire Dashboard**  
    Forward the port to access the Aspire dashboard with the following command:
    ```bash
