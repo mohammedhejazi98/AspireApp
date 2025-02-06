@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 
-namespace Aspire.Hosting;
+namespace AspireApp.AppHost;
 
 public static class DevCertHostingExtensions
 {
@@ -22,7 +22,6 @@ public static class DevCertHostingExtensions
     {
         if (builder.ApplicationBuilder.ExecutionContext.IsRunMode && builder.ApplicationBuilder.Environment.IsDevelopment())
         {
-#pragma warning disable ASPIREEVENTING001
             builder.ApplicationBuilder.Eventing.Subscribe<BeforeStartEvent>(async (e, ct) =>
             {
                 var logger = e.Services.GetRequiredService<ResourceLoggerService>().GetLogger(builder.Resource);
@@ -67,7 +66,6 @@ public static class DevCertHostingExtensions
                     onSuccessfulExport(certPath, certKeyPath);
                 }
             });
-#pragma warning restore ASPIREEVENTING001
         }
 
         return builder;

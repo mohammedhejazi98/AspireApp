@@ -21,7 +21,7 @@ spec:
       containers:
       - name: prometheus
         image: prom/prometheus:latest
-        imagePullPolicy: IfNotPresent
+        imagePullPolicy: Always
         args:
         - --web.enable-otlp-receiver
         - --config.file=/etc/prometheus/prometheus.yml

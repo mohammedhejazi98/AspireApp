@@ -6,7 +6,7 @@
   "containerImageTags": [
     "latest"
   ],
-  "imagePullPolicy": "IfNotPresent",
+  "imagePullPolicy": "Always",
   "containerBuilder": "docker",
   "containerRepositoryPrefix": "mohammedhejazi",
   "kubeContext": "docker-desktop",
@@ -16,8 +16,8 @@
   "includeDashboard": true,
   "useCustomNamespace": false,
   "secrets": {
-    "salt": "iSC2jXcRpnhlRXKZ",
-    "hash": "\u002B73nA3uzHBzEwY7w6pR6w3NP7hypkXpGQEm/p8Kj3to=",
+    "salt": "G6J2mTlpI46Np0fA",
+    "hash": "7prUuuY39h1IPvFLgAFAIIIucjHeZYCGMAXkwD0cUEo=",
     "secrets": {}
   },
   "processAllComponents": true

@@ -1,4 +1,7 @@
 resources:
+- prometheus
+- grafana
+- otelcollector
 - apiservice
 - webfrontend
 - dashboard.yaml
