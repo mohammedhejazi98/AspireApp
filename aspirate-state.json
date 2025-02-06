@@ -1,10 +1,14 @@
 {
-  "inputPath": "aspirate-output",
+  "projectPath": ".",
+  "outputPath": "aspirate-output",
+  "containerRegistry": "docker.io",
   "containerImageTags": [
     "latest"
   ],
-  "kubeContext": "docker-desktop",
-  "outputFormat": "docker",
+  "containerBuilder": "docker",
+  "containerRepositoryPrefix": "mohammedhejazi",
+  "outputFormat": "kustomize",
+  "privateRegistryEmail": "aspir8@aka.ms",
   "secrets": {
     "salt": "FTmgq25bElShWrHJ",
     "hash": "lMBReue93pMgiy2ZkFchIu3JiQ1tJhSOwVGKWgiQA9E=",

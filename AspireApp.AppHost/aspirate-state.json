@@ -1,13 +1,24 @@
 {
+  "projectPath": ".",
   "inputPath": "aspirate-output",
+  "outputPath": "aspirate-output",
+  "containerRegistry": "docker.io",
   "containerImageTags": [
     "latest"
   ],
+  "imagePullPolicy": "IfNotPresent",
+  "containerBuilder": "docker",
+  "containerRepositoryPrefix": "mohammedhejazi",
   "kubeContext": "docker-desktop",
-  "outputFormat": "docker",
+  "outputFormat": "kustomize",
+  "skipFinalKustomizeGeneration": false,
+  "privateRegistryEmail": "aspir8@aka.ms",
+  "includeDashboard": true,
+  "useCustomNamespace": false,
   "secrets": {
     "salt": "iSC2jXcRpnhlRXKZ",
     "hash": "\u002B73nA3uzHBzEwY7w6pR6w3NP7hypkXpGQEm/p8Kj3to=",
     "secrets": {}
-  }
+  },
+  "processAllComponents": true
 }
