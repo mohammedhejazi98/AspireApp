@@ -10,7 +10,7 @@
       ],
       "bindMounts": [
         {
-          "source": "../prometheus",
+          "source": "prometheus",
           "target": "/etc/prometheus",
           "readOnly": true
         }
@@ -29,12 +29,12 @@
       "image": "grafana/grafana:latest",
       "bindMounts": [
         {
-          "source": "../grafana/config",
+          "source": "grafana/config",
           "target": "/etc/grafana",
           "readOnly": true
         },
         {
-          "source": "../grafana/dashboards",
+          "source": "grafana/dashboards",
           "target": "/var/lib/grafana/dashboards",
           "readOnly": true
         }
@@ -56,7 +56,7 @@
       "image": "ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:latest",
       "bindMounts": [
         {
-          "source": "../otelcollector/config.yaml",
+          "source": "otelcollector/config.yaml",
           "target": "/etc/otelcol-contrib/config.yaml",
           "readOnly": false
         }

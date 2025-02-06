@@ -16,8 +16,8 @@
   "includeDashboard": true,
   "useCustomNamespace": false,
   "secrets": {
-    "salt": "G6J2mTlpI46Np0fA",
-    "hash": "7prUuuY39h1IPvFLgAFAIIIucjHeZYCGMAXkwD0cUEo=",
+    "salt": "JqQhjN9Su0zNxrz/",
+    "hash": "U9tRyqAJvDZ3jJb7QeM0HUEnzofathmCs8\u002BnKh/A6c4=",
     "secrets": {}
   },
   "processAllComponents": true
