@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: otelcollector
+  labels:
+    app: otelcollector
+spec:
+  minReadySeconds: 60
+  replicas: 1
+  selector:
+    matchLabels:
+      app: otelcollector
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: otelcollector
+    spec:
+      containers:
+      - name: otelcollector
+        image: ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: grpc
+          containerPort: 4317
+        - name: http
+          containerPort: 4318
+        envFrom:
+        - configMapRef:
+            name: otelcollector-env
+      terminationGracePeriodSeconds: 180

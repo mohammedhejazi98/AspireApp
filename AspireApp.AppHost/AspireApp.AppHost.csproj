@@ -14,7 +14,6 @@
     <ProjectReference Include="..\AspireApp.Web\AspireApp.Web.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="C:\Users\mohd_\source\repos\aspire-samples\samples\Shared\DevCertHostingExtensions.cs" Link="DevCertHostingExtensions.cs" />
     <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0" />
   </ItemGroup>
 </Project>

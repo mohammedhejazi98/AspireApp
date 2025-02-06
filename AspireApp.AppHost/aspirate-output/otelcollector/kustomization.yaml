@@ -1,0 +1,16 @@
+resources:
+- deployment.yaml
+- service.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
+
+configMapGenerator:
+- name: otelcollector-env
+  literals:
+    - ASPIRE_ENDPOINT=https://localhost:21177
+    - ASPIRE_INSECURE=false
+    - PROMETHEUS_ENDPOINT=http://prometheus:9090/api/v1/otlp
+    - OTEL_EXPORTER_OTLP_ENDPOINT=http://aspire-dashboard:18889
+    - OTEL_SERVICE_NAME=otelcollector
+
