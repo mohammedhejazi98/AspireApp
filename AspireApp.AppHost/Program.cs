@@ -1,3 +1,4 @@
+using AspireApp.AppHost;
 using AspireApp.AppHost.OpenTelemetryCollector;
 
 var builder = DistributedApplication.CreateBuilder(args);
@@ -18,7 +19,7 @@ builder.AddOpenTelemetryCollector("otelcollector", "otelcollector/config.yaml")
     .WithEnvironment("PROMETHEUS_ENDPOINT", $"{prometheus.GetEndpoint("http")}/api/v1/otlp");
 
 
-var apiService = builder.AddProject<Projects.AspireApp_ApiService>("apiservice")
+var apiService = builder.AddProject<Projects.AspireApp_ApiService>("apiservice").WithScalar().WithSwagger()
     .WithEnvironment("GRAFANA_URL", grafana.GetEndpoint("http"));
 
 var webfrontend = builder.AddProject<Projects.AspireApp_Web>("webfrontend")
