@@ -5,6 +5,24 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
   <ItemGroup>
+    <Content Remove="wwwroot\grafana\config\grafana.ini" />
+    <Content Remove="wwwroot\grafana\config\provisioning\dashboards\default.yaml" />
+    <Content Remove="wwwroot\grafana\config\provisioning\datasources\default.yaml" />
+    <Content Remove="wwwroot\grafana\dashboards\aspnetcore-endpoint.json" />
+    <Content Remove="wwwroot\grafana\dashboards\aspnetcore.json" />
+    <Content Remove="wwwroot\otelcollector\config.yaml" />
+    <Content Remove="wwwroot\prometheus\prometheus.yml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="wwwroot\grafana\config\grafana.ini" />
+    <None Include="wwwroot\grafana\config\provisioning\dashboards\default.yaml" />
+    <None Include="wwwroot\grafana\config\provisioning\datasources\default.yaml" />
+    <None Include="wwwroot\grafana\dashboards\aspnetcore-endpoint.json" />
+    <None Include="wwwroot\grafana\dashboards\aspnetcore.json" />
+    <None Include="wwwroot\otelcollector\config.yaml" />
+    <None Include="wwwroot\prometheus\prometheus.yml" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\AspireApp.ServiceDefaults\AspireApp.ServiceDefaults.csproj" />
   </ItemGroup>
 </Project>
