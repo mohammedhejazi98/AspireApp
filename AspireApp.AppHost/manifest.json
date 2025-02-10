@@ -10,7 +10,7 @@
       ],
       "bindMounts": [
         {
-          "source": "../AspireApp.ApiService/wwwroot/prometheus",
+          "source": "../AspireApp.ApiService/wwwroot/Files/prometheus",
           "target": "/etc/prometheus",
           "readOnly": true
         }
@@ -29,12 +29,12 @@
       "image": "grafana/grafana:latest",
       "bindMounts": [
         {
-          "source": "../AspireApp.ApiService/wwwroot/grafana/config",
+          "source": "../AspireApp.ApiService/wwwroot/Files/grafana/config",
           "target": "/etc/grafana",
           "readOnly": true
         },
         {
-          "source": "../AspireApp.ApiService/wwwroot/grafana/dashboards",
+          "source": "../AspireApp.ApiService/wwwroot/Files/grafana/dashboards",
           "target": "/var/lib/grafana/dashboards",
           "readOnly": true
         }
@@ -56,7 +56,7 @@
       "image": "ghcr.io/open-telemetry/opentelemetry-collector-releases/opentelemetry-collector-contrib:latest",
       "bindMounts": [
         {
-          "source": "../AspireApp.ApiService/wwwroot/otelcollector/config.yaml",
+          "source": "../AspireApp.ApiService/wwwroot/Files/otelcollector/config.yaml",
           "target": "/etc/otelcol-contrib/config.yaml",
           "readOnly": false
         }

@@ -44,6 +44,7 @@ app.MapGet("/weatherforecast", () =>
 });
 
 app.MapDefaultEndpoints();
+app.UseStaticFiles();
 
 app.Run();
 
