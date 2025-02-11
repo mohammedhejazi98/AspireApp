@@ -22,10 +22,15 @@ builder.AddOpenTelemetryCollector("otelcollector", "../AspireApp.ApiService/wwwr
     .WithEnvironment("PROMETHEUS_ENDPOINT", $"{prometheus.GetEndpoint("http")}/api/v1/otlp");
 
 
-var apiService = builder.AddProject<Projects.AspireApp_ApiService>("apiservice").WithScalar().WithSwagger();
+var apiService = builder.AddProject<Projects.AspireApp_ApiService>("apiservice")
+    .WithScalar()
+    .WithSwagger()
+    .WaitFor(cache)
+    .WithReference(cache);
 
 var webfrontend = builder.AddProject<Projects.AspireApp_Web>("webfrontend")
     .WithExternalHttpEndpoints()
+    
     .WithReference(apiService);
 
 builder.Build().Run();
