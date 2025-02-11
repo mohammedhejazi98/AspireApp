@@ -3,7 +3,8 @@ using AspireApp.AppHost.OpenTelemetryCollector;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
-var cache = builder.AddRedis("Cache").WithRedisInsight();
+var cache = builder.AddRedis("cache")
+    .WithRedisInsight().WithRedisCommander();
 
 
 var prometheus = builder.AddContainer("prometheus", "prom/prometheus")
