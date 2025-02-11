@@ -7,10 +7,4 @@
   <ItemGroup>
     <ProjectReference Include="..\AspireApp.ServiceDefaults\AspireApp.ServiceDefaults.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\Files\grafana\" />
-    <Folder Include="wwwroot\Files\otelcollector\" />
-    <Folder Include="wwwroot\Files\prometheus\" />
-  </ItemGroup>
 </Project>
