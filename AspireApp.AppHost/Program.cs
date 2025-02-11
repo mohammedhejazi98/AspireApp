@@ -3,6 +3,8 @@ using AspireApp.AppHost.OpenTelemetryCollector;
 
 var builder = DistributedApplication.CreateBuilder(args);
 
+var cache = builder.AddRedis("Cache").WithRedisInsight();
+
 
 var prometheus = builder.AddContainer("prometheus", "prom/prometheus")
     .WithBindMount("../AspireApp.ApiService/wwwroot/Files/prometheus", "/etc/prometheus", isReadOnly: true)
@@ -19,8 +21,7 @@ builder.AddOpenTelemetryCollector("otelcollector", "../AspireApp.ApiService/wwwr
     .WithEnvironment("PROMETHEUS_ENDPOINT", $"{prometheus.GetEndpoint("http")}/api/v1/otlp");
 
 
-var apiService = builder.AddProject<Projects.AspireApp_ApiService>("apiservice").WithScalar().WithSwagger()
-    .WithEnvironment("GRAFANA_URL", grafana.GetEndpoint("http"));
+var apiService = builder.AddProject<Projects.AspireApp_ApiService>("apiservice").WithScalar().WithSwagger();
 
 var webfrontend = builder.AddProject<Projects.AspireApp_Web>("webfrontend")
     .WithExternalHttpEndpoints()
