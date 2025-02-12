@@ -4,7 +4,7 @@ using AspireApp.AppHost.OpenTelemetryCollector;
 var builder = DistributedApplication.CreateBuilder(args);
 
 var cache = builder.AddRedis("cache")
-    .WithRedisInsight().WithRedisCommander();
+    .WithRedisInsight(c => c.PublishAsContainer());
 
 
 var prometheus = builder.AddContainer("prometheus", "prom/prometheus")
@@ -28,9 +28,9 @@ var apiService = builder.AddProject<Projects.AspireApp_ApiService>("apiservice")
     .WaitFor(cache)
     .WithReference(cache);
 
-var webfrontend = builder.AddProject<Projects.AspireApp_Web>("webfrontend")
+builder.AddProject<Projects.AspireApp_Web>("webfrontend")
     .WithExternalHttpEndpoints()
-    
     .WithReference(apiService);
+
 
 builder.Build().Run();
