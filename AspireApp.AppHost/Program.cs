@@ -6,6 +6,7 @@ var builder = DistributedApplication.CreateBuilder(args);
 var cache = builder.AddRedis("cache")
     .WithRedisInsight(c => c.PublishAsContainer());
 
+var rabbitmq = builder.AddRabbitMQ("rabbitmq").WithManagementPlugin();
 
 var prometheus = builder.AddContainer("prometheus", "prom/prometheus")
     .WithBindMount("../AspireApp.ApiService/wwwroot/Files/prometheus", "/etc/prometheus", isReadOnly: true)
