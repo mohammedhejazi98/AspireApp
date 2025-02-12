@@ -1,5 +1,8 @@
+using System.Security.Cryptography;
 using AspireApp.ApiService;
 using AspireApp.ServiceDefaults;
+
+using Microsoft.Extensions.Caching.Distributed;
 
 using Scalar.AspNetCore;
 
@@ -11,6 +14,7 @@ builder.AddServiceDefaults();
 // Add services to the container.
 builder.Services.AddProblemDetails();
 builder.Services.AddOpenApi();
+builder.AddRedisDistributedCache("cache");
 
 var app = builder.Build();
 
@@ -30,8 +34,10 @@ if (app.Environment.IsDevelopment())
         op.SwaggerEndpoint("/openapi/v1.json", "OpenApi v1");
     });
 }
-app.MapGet("/weatherforecast", () =>
+app.MapGet("/weatherforecast", async (IDistributedCache cache) =>
 {
+    await cache.SetStringAsync(DateTimeOffset.UtcNow.ToString(), DateTimeOffset.UtcNow.ToString());
+
     var forecast = Enumerable.Range(1, 5).Select(index =>
         new WeatherForecast
         (
